@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+      - run: npm ci
       - run: make lint
 
   test:
@@ -25,6 +26,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+      - run: npm ci
       - run: make test
 
   package:
@@ -36,6 +38,7 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+      - run: npm ci
       - run: make package
       - name: Verify tgz exists
         run: compgen -G "*.tgz" > /dev/null
